@@ -17,9 +17,9 @@ export default {
   mounted() {
     const vm = this;
 
-    // use default socket defined in nuxt.config.js
+    // use "main" socket defined in nuxt.config.js
     vm.socket = this.$nuxtSocket({
-      name: "main" // select "main" socket from nuxt.config.js - we could also skip this because "main" is the default socket
+      name: "main", // select "main" socket from nuxt.config.js - we could also skip this because "main" is the default socket
     });
 
     vm.socket.on("tick", (tickId) => {

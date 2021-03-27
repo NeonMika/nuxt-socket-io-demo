@@ -26,9 +26,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  serverMiddleware: [
-    "~/serverMiddleware/server.js"
-  ],
+  serverMiddleware: ["~/serverMiddleware/io-server.js"],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -47,7 +45,8 @@ export default {
 
   // socket.io configuration
   io: {
-    // module options
+    // we could have multiple sockets that we identify with names
+    // one of these sockets may have set "default" to true
     sockets: [{
       default: true, // make this the default socket
       name: 'main', // give it a name that we can later use to choose this socket in the .vue file
